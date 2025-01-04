@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "delay.h": "c",
+        "stdint.h": "c",
+        "rtthread.h": "c",
+        "aht10.h": "c"
+    }
+}
