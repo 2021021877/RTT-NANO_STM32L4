@@ -24,7 +24,7 @@ rtt-nano_stm32l4/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_uart.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_uart_ex.h \
   ..\Core\Inc\i2c.h ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
-  ..\BSP\aht10.h ..\BSP\delay.h \
+  ..\BSP\aht10.h ..\HARDWARE\myiic.h ..\HARDWARE\delay.h \
   ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\include\rtthread.h \
   ..\RT-Thread\rtconfig.h \
   ..\Middlewares\Third_Party\RealThread_RTOS_RT-Thread\components\finsh\inc\finsh_config.h \

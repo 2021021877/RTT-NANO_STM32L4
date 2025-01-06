@@ -3,6 +3,8 @@
         "delay.h": "c",
         "stdint.h": "c",
         "rtthread.h": "c",
-        "aht10.h": "c"
+        "aht10.h": "c",
+        "main.h": "c",
+        "stm32l4xx.h": "c"
     }
 }

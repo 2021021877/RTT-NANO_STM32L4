@@ -1,4 +1,4 @@
-rtt-nano_stm32l4/delay.o: ..\BSP\delay.c ..\BSP\delay.h \
+rtt-nano_stm32l4/delay.o: ..\HARDWARE\delay.c ..\HARDWARE\delay.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l475xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \

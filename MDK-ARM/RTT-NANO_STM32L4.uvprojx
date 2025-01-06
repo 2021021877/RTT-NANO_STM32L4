@@ -596,20 +596,22 @@
               <FileType>1</FileType>
               <FilePath>..\BSP\aht10.c</FilePath>
             </File>
-            <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>myiic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\myiic.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>hardware</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>myiic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\myiic.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Middlewares/RT-Thread/RTOS/shell</GroupName>

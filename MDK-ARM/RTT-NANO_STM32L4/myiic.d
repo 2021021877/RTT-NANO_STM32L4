@@ -1,4 +1,5 @@
-rtt-nano_stm32l4/myiic.o: ..\BSP\myiic.c ..\BSP\myiic.h ..\BSP\delay.h \
+rtt-nano_stm32l4/myiic.o: ..\HARDWARE\myiic.c ..\HARDWARE\myiic.h \
+  ..\HARDWARE\delay.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l475xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \
