@@ -12,15 +12,15 @@ void IIC_Delay(void)
  * @return - none       
  * @note   - none
  */
-void IIC_Start(i2c_driver_t i2c_driver)
+void IIC_Start(i2c_driver_t * i2c_driver)
 {
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_out(); 
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(1);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(0);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_out(); 
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(1);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(0);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
 }
 /**
  * @brief  IIC stop signal 
@@ -28,15 +28,15 @@ void IIC_Start(i2c_driver_t i2c_driver)
  * @return - none       
  * @note   - none
  */
-void IIC_Stop(i2c_driver_t i2c_driver)
+void IIC_Stop(i2c_driver_t * i2c_driver)
 {
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_out();
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(0);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_out();
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(0);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
 }
 
 /**
@@ -45,17 +45,17 @@ void IIC_Stop(i2c_driver_t i2c_driver)
  * @return - none       
  * @note   - none
  */
-uint8_t IIC_Wait_Ack(i2c_driver_t i2c_driver)
+uint8_t IIC_Wait_Ack(i2c_driver_t * i2c_driver)
 {
     
     uint16_t ucErrTime = 0;
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_in();
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_in();
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
 
-    while (i2c_driver.pf_i2c_interface_inst->pf_get_sda())
+    while (i2c_driver->pf_i2c_interface_inst->pf_get_sda())
     {
         ucErrTime++;
 
@@ -65,7 +65,7 @@ uint8_t IIC_Wait_Ack(i2c_driver_t i2c_driver)
             return 1;
         }
     }
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
     return 0;
 }
 /**
@@ -74,16 +74,16 @@ uint8_t IIC_Wait_Ack(i2c_driver_t i2c_driver)
  * @return - none       
  * @note   - none
  */
-void IIC_Ack(i2c_driver_t i2c_driver)
+void IIC_Ack(i2c_driver_t * i2c_driver)
 {
     
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_out();
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(0);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_out();
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(0);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
 }
 /**
  * @brief  IIC nack signal 
@@ -91,16 +91,16 @@ void IIC_Ack(i2c_driver_t i2c_driver)
  * @return - none       
  * @note   - none
  */
-void IIC_NAck(i2c_driver_t i2c_driver)
+void IIC_NAck(i2c_driver_t * i2c_driver)
 {
     
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_out();
-    i2c_driver.pf_i2c_interface_inst->pf_set_sda(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-    i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_out();
+    i2c_driver->pf_i2c_interface_inst->pf_set_sda(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+    i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
 }
 /**
  * @brief  IIC send byte 
@@ -108,20 +108,20 @@ void IIC_NAck(i2c_driver_t i2c_driver)
  * @return - none       
  * @note   - none
  */
-void IIC_Send_Byte(i2c_driver_t i2c_driver,uint8_t txd)
+void IIC_Send_Byte(i2c_driver_t * i2c_driver,uint8_t txd)
 {
     
     uint8_t t;
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_out();
-    i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_out();
+    i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
     for (t = 0; t < 8; t++)
     {
-        i2c_driver.pf_i2c_interface_inst->pf_set_sda((txd & 0x80) >> 7);
+        i2c_driver->pf_i2c_interface_inst->pf_set_sda((txd & 0x80) >> 7);
         txd <<= 1;
-        i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
-        i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-        i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
-        i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
+        i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
+        i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+        i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
+        i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
     }
 
 }
@@ -131,20 +131,20 @@ void IIC_Send_Byte(i2c_driver_t i2c_driver,uint8_t txd)
  * @return - none       
  * @note   - none
  */
-uint8_t IIC_Read_Byte(i2c_driver_t i2c_driver,unsigned char ack)
+uint8_t IIC_Read_Byte(i2c_driver_t * i2c_driver,unsigned char ack)
 {
     
     unsigned char i, receive = 0;
-    i2c_driver.pf_i2c_interface_inst->pf_i2c_sda_in();
+    i2c_driver->pf_i2c_interface_inst->pf_i2c_sda_in();
     for (i = 0; i < 8; i++)
     {
-        i2c_driver.pf_i2c_interface_inst->pf_set_scl(0);
-        i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
-        i2c_driver.pf_i2c_interface_inst->pf_set_scl(1);
+        i2c_driver->pf_i2c_interface_inst->pf_set_scl(0);
+        i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
+        i2c_driver->pf_i2c_interface_inst->pf_set_scl(1);
         receive <<= 1;
-        if (i2c_driver.pf_i2c_interface_inst->pf_get_sda())
+        if (i2c_driver->pf_i2c_interface_inst->pf_get_sda())
             receive++;
-        i2c_driver.pf_delay_interface_inst->pf_delay_us(100);
+        i2c_driver->pf_delay_interface_inst->pf_delay_us(100);
     }
 
     if (!ack)
@@ -163,7 +163,7 @@ uint8_t IIC_Read_Byte(i2c_driver_t i2c_driver,unsigned char ack)
  * @return -       
  * @note   - no
  */
-uint8_t IIC_Write_Data(i2c_driver_t i2c_driver,
+uint8_t IIC_Write_Data(i2c_driver_t * i2c_driver,
                             uint8_t       addr,
                             uint8_t        cmd,
                             uint8_t      *data,
@@ -192,7 +192,7 @@ uint8_t IIC_Write_Data(i2c_driver_t i2c_driver,
     return 0;
 }
 
-uint8_t IIC_Read_Data(i2c_driver_t i2c_driver,
+uint8_t IIC_Read_Data(i2c_driver_t * i2c_driver,
                            uint8_t       addr,
                            uint8_t      *data,
                            uint8_t        len

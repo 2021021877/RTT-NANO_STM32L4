@@ -168,8 +168,8 @@ delay_interface_t delay_interface = {
 };
 
 //I2C_Driver aht10_i2c_ops = {
-//    .Write =IIC_Write_Data,
-//    .Read   = IIC_Read_Data
+//   .Write =IIC_Write_Data,
+//   .Read   = IIC_Read_Data
 //};
 
 /* USER CODE END PV */
@@ -221,17 +221,16 @@ int main(void)
   /* USER CODE END 2 */
   i2c_driver_t i2c_driver;
   iic_driver_inst(&i2c_driver, &i2c_ops, &delay_interface);
-  AHT10_Init(i2c_driver);                   
-//     aht10_t aht10= {0};
-//            rt_kprintf("aht10 or i2c_driver is NULL\n");
-//  aht10_driver_inst(&aht10, &aht10_i2c_ops);
+  AHT10_Init(&i2c_driver);                   
+   
+
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    temperature = AHT10_Read_Temperature(i2c_driver);
-    humidity = AHT10_Read_Humidity(i2c_driver);
+    temperature = AHT10_Read_Temperature(&i2c_driver);
+    humidity = AHT10_Read_Humidity(&i2c_driver);
     printf("temperature:%.2f humidity:%.2f\n", temperature, humidity);
     rt_thread_delay(1000);
     /* USER CODE END WHILE */

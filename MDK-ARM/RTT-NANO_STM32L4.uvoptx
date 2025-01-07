@@ -152,18 +152,50 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>223</LineNumber>
+          <LineNumber>342</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134233960</Address>
+          <Address>2</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Core/Src/main.c</Filename>
+          <Filename>../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/thread.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\RTT_NANO_STM32L4\../Core/Src/main.c\223</Expression>
+          <Expression>\\RTT_NANO_STM32L4\../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/thread.c\342</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>551</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>14</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/thread.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\RTT_NANO_STM32L4\../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/thread.c\551</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>76</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134229912</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\BSP\aht10.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\RTT_NANO_STM32L4\../BSP/aht10.c\76</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
